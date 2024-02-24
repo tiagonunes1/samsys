@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SamsysDemo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f48fe7c834e995f3a131d99f300f6ab1c52b2eff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SamsysDemo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SamsysDemo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

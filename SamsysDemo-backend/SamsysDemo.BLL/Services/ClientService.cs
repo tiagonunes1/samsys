@@ -42,7 +42,8 @@ namespace SamsysDemo.BLL.Services
                     IsActive = client.IsActive,
                     ConcurrencyToken = Convert.ToBase64String(client.ConcurrencyToken),
                     Name = client.Name,
-                    PhoneNumber = client.PhoneNumber
+                    PhoneNumber = client.PhoneNumber,
+                    DateBirth = client.DateBirth
                 };
                 response.Success = true;
                 return response;
@@ -68,6 +69,8 @@ namespace SamsysDemo.BLL.Services
                     return response;
                 }
                 client.Update(clientToUpdate.Name, clientToUpdate.PhoneNumber);
+                client.DateBirth = clientToUpdate.DateBirth;
+                
                 _unitOfWork.ClientRepository.Update(client, clientToUpdate.ConcurrencyToken);
                 await _unitOfWork.SaveAsync();
                 response.Success = true;

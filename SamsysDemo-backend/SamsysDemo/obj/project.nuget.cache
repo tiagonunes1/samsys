@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AXuN+3V1jLRvrCXUbzikmIvVIf/VYwPUzDXNzYtXIaiIsVn+FRsecSIek7Tjb2+tFet9TAquGvnACLxw6jAuRw==",
+  "dgSpecHash": "/v5gw9Fa3+CE32M4DbJtlFlItW+9UFZBO19fV9SeAv0HwY1Pn8YiYOTwdYFhfFXx1LZaFrheOgHmFzOyD3uObw==",
   "success": true,
   "projectFilePath": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo/SamsysDemo.csproj",
   "expectedPackageFiles": [
@@ -76,10 +76,7 @@
     "/Users/tiagonunes/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
     "/Users/tiagonunes/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/Users/tiagonunes/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "/Users/tiagonunes/.nuget/packages/system.windows.extensions/5.0.0/system.windows.extensions.5.0.0.nupkg.sha512",
-    "/Users/tiagonunes/.nuget/packages/microsoft.netcore.app.ref/7.0.16/microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "/Users/tiagonunes/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.16/microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512",
-    "/Users/tiagonunes/.nuget/packages/microsoft.netcore.app.host.osx-x64/7.0.16/microsoft.netcore.app.host.osx-x64.7.0.16.nupkg.sha512"
+    "/Users/tiagonunes/.nuget/packages/system.windows.extensions/5.0.0/system.windows.extensions.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

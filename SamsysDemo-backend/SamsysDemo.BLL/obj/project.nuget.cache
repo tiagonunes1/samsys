@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d0qi4bgQDOAqMG5cPVARTlC1BNGPPUyEoRuCT6nZ7Js3rw8i4Vs4Kyu7wRvLuHDlK3h7X52r71hrizPtYQtUew==",
+  "dgSpecHash": "OBjeqYSUAwH281JBk0oeVxJlj1Oo9SKTliW+cHi+YKgyWIeinq6dKGhkuNop6JUFaglEDbPUY96AeGpH3WliMg==",
   "success": true,
   "projectFilePath": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.BLL/SamsysDemo.BLL.csproj",
   "expectedPackageFiles": [
@@ -14,9 +14,7 @@
     "/Users/tiagonunes/.nuget/packages/microsoft.extensions.logging/7.0.0/microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "/Users/tiagonunes/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "/Users/tiagonunes/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
-    "/Users/tiagonunes/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
-    "/Users/tiagonunes/.nuget/packages/microsoft.netcore.app.ref/7.0.16/microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "/Users/tiagonunes/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.16/microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+    "/Users/tiagonunes/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

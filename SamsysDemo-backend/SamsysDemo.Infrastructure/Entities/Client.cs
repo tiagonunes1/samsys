@@ -24,6 +24,8 @@ namespace SamsysDemo.Infrastructure.Entities
         [Timestamp]
         public byte[] ConcurrencyToken { get; private set; }
 
+        public DateTime? DateBirth { get; set; }
+
         public bool IsRemoved { get; set; } = false;
 
         public DateTime? DateRemoved { get; set; }

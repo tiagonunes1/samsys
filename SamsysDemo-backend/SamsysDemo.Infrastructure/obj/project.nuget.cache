@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "STmmW3RAVMzNzw3lwoFHXnAFWJte1zkCc0edDm3Jh67oB73FG8Or46t/C9FZJJueXAxHCQOxohJq4s4XSyVO3A==",
+  "dgSpecHash": "SWC4IOGH4mzh8vzAGpqAYD1pdnIqE4pPCaajENcC4HB0fO+GRqEJsvhVoB6gOq7lokAPjKbkw1pv9evrOVTY9g==",
   "success": true,
   "projectFilePath": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.Infrastructure/SamsysDemo.Infrastructure.csproj",
-  "expectedPackageFiles": [
-    "/Users/tiagonunes/.nuget/packages/microsoft.netcore.app.ref/7.0.16/microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "/Users/tiagonunes/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.16/microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
