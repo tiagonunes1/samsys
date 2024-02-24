@@ -1,36 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.DAL\\SamsysDemo.DAL.csproj": {}
+    "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.DAL/SamsysDemo.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.DAL\\SamsysDemo.DAL.csproj": {
+    "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.DAL/SamsysDemo.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.DAL\\SamsysDemo.DAL.csproj",
+        "projectUniqueName": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.DAL/SamsysDemo.DAL.csproj",
         "projectName": "SamsysDemo.DAL",
-        "projectPath": "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.DAL\\SamsysDemo.DAL.csproj",
-        "packagesPath": "C:\\Users\\marcos853bandeira\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.DAL\\obj\\",
+        "projectPath": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.DAL/SamsysDemo.DAL.csproj",
+        "packagesPath": "/Users/tiagonunes/.nuget/packages/",
+        "outputPath": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.DAL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marcos853bandeira\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/tiagonunes/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/Samsys-dev/_packaging/Samsys.Lib%40Local/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.Infrastructure\\SamsysDemo.Infrastructure.csproj": {
-                "projectPath": "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.Infrastructure\\SamsysDemo.Infrastructure.csproj"
+              "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.Infrastructure/SamsysDemo.Infrastructure.csproj": {
+                "projectPath": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.Infrastructure/SamsysDemo.Infrastructure.csproj"
               }
             }
           }
@@ -39,6 +36,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -71,35 +73,42 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.16, 7.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.16, 7.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.Infrastructure\\SamsysDemo.Infrastructure.csproj": {
+    "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.Infrastructure/SamsysDemo.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.Infrastructure\\SamsysDemo.Infrastructure.csproj",
+        "projectUniqueName": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.Infrastructure/SamsysDemo.Infrastructure.csproj",
         "projectName": "SamsysDemo.Infrastructure",
-        "projectPath": "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.Infrastructure\\SamsysDemo.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\marcos853bandeira\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\SamsysDemo\\SamsysDemo-backend\\SamsysDemo.Infrastructure\\obj\\",
+        "projectPath": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.Infrastructure/SamsysDemo.Infrastructure.csproj",
+        "packagesPath": "/Users/tiagonunes/.nuget/packages/",
+        "outputPath": "/Users/tiagonunes/Documents/projects/samsys/samsys/SamsysDemo-backend/SamsysDemo.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marcos853bandeira\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/tiagonunes/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/Samsys-dev/_packaging/Samsys.Lib%40Local/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
@@ -111,6 +120,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -127,12 +141,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.16, 7.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.16, 7.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }
