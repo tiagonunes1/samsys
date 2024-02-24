@@ -56,6 +56,53 @@ namespace SamsysDemo.BLL.Services
             }
         }
 
+        public async Task<MessagingHelper<ClientDTO>> Create(CreateClientDTO newClient)
+        {
+            MessagingHelper<ClientDTO> response = new();
+
+            try
+            {
+                bool isDuplicate = await _unitOfWork.ClientRepository.CheckDuplicate(newClient.Name, newClient.PhoneNumber);
+
+                if (isDuplicate)
+                {
+                    response.Success = false;
+                    response.SetMessage("Já existe um cliente com o mesmo nome ou número de telefone.");
+                    return response;
+                }
+
+                Client client = new Client
+                {
+                    Name = newClient.Name,
+                    PhoneNumber = newClient.PhoneNumber,
+                    DateBirth = newClient.DateBirth,
+                    IsActive = true
+                };
+
+                await _unitOfWork.ClientRepository.Insert(client);
+                await _unitOfWork.SaveAsync();
+
+                response.Obj = new ClientDTO
+                {
+                    Id = client.Id,
+                    IsActive = client.IsActive,
+                    ConcurrencyToken = Convert.ToBase64String(client.ConcurrencyToken),
+                    Name = client.Name,
+                    PhoneNumber = client.PhoneNumber,
+                    DateBirth = client.DateBirth
+                };
+
+                response.Success = true;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.SetMessage("Ocorreu um erro inesperado ao criar o cliente. Tente novamente.");
+                return response;
+            }
+        }
+
         public async Task<MessagingHelper> Update(long id, UpdateClientDTO clientToUpdate)
         {
             MessagingHelper<Client> response = new();
@@ -70,7 +117,7 @@ namespace SamsysDemo.BLL.Services
                 }
                 client.Update(clientToUpdate.Name, clientToUpdate.PhoneNumber);
                 client.DateBirth = clientToUpdate.DateBirth;
-                
+
                 _unitOfWork.ClientRepository.Update(client, clientToUpdate.ConcurrencyToken);
                 await _unitOfWork.SaveAsync();
                 response.Success = true;
