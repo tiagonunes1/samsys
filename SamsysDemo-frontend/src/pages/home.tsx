@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom'
 export default function Home() {
 
     return (
@@ -20,8 +20,8 @@ export default function Home() {
 
                 <ul>
                     <li>Adicionar campo "Data Nascimento" na entidade cliente.</li>
-                    <li>Implementar página, endpoint e processo na api para criar um cliente</li>
-                    <li>Implementar página, endpoint e processo na api para listar todos os clientes</li>
+                    <li>Implementar página, endpoint e processo na api para criar um cliente. (<Link to="/client/create">http://localhost:5173/client/create</Link>)</li>
+                    <li>Implementar página, endpoint e processo na api para listar todos os clientes. (<Link to="/client/list">http://localhost:5173/client/list</Link>)</li>
                     <li>Qualquer tipo de melhoria será contabilizada</li>
                 </ul>
             </div>
