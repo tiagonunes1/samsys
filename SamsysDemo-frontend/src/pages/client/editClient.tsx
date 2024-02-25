@@ -29,7 +29,7 @@ export default function EditClient() {
         var client: ClientEditDTO = {
             name: resultGetClient.obj!.name,
             phoneNumber: resultGetClient.obj!.phoneNumber,
-            DateBirth: resultGetClient.obj!.DateBirth,
+            dateBirth: resultGetClient.obj!.DateBirth,
             concurrencyToken: resultGetClient.obj!.concurrencyToken
         }
 
@@ -96,9 +96,9 @@ export default function EditClient() {
                     <Col xl={6}>
                         <input
                             type="date"
-                            value={clientToUpdate?.DateBirth ?? ""}
+                            value={clientToUpdate?.dateBirth ?? ""}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                                setClientToUpdate({ ...clientToUpdate, DateBirth: e.target.value })
+                                setClientToUpdate({ ...clientToUpdate, dateBirth: e.target.value })
                             }
                         />
                     </Col>

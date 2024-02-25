@@ -73,7 +73,6 @@ export class ClientService {
     clientData: ClientCreateDTO
   ): Promise<MessagingHelper<ClientCreateDTO | null>> {
     try {
-      console.log("Request Payload:", clientData);
       if (clientData.dateBirth === "") {
         clientData.dateBirth = "1900-01-01";
       }

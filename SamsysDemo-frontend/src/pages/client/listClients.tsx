@@ -16,12 +16,16 @@ const ListClients = () => {
     fetchClients();
   }, []);
 
+  const formatDate = (isoDate) => {
+    const date = new Date(isoDate);
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    return date.toLocaleDateString(undefined, options);
+  };
+
   const fetchClients = async () => {
     try {
       const clientService = new ClientService();
       const resultGetClients = await clientService.getAllClients();
-
-      console.log("Resultado do backend:", resultGetClients);
 
       if (Array.isArray(resultGetClients)) {
         setClients(resultGetClients);
@@ -76,7 +80,7 @@ const ListClients = () => {
                 <tr key={client.id}>
                   <td>{client.name}</td>
                   <td>{client.phoneNumber}</td>
-                  <td>{client.DateBirth}</td>
+                  <td>{formatDate(client.dateBirth)}</td>
                   <td>
                     <button onClick={() => navigateToEdit(client.id)}>Editar</button>
                   </td>

@@ -94,17 +94,6 @@ export default function CreateClient() {
                     </Col>
                 </Row>
 
-                <Row>
-                    <ClientStatusComponent
-                        id={0}  
-                        isActive={isActive}
-                        xl={12}
-                        style={{ width: "100%", marginTop: "1em" }}
-                        setErrorMessage={setErrorMessage}
-                        setSuccessMessage={setSuccessMessage}
-                    />
-                </Row>
-
                 {errorMessage && (
                     <Row>
                         <Col xl={12} className="error">
