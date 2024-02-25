@@ -73,6 +73,10 @@ export class ClientService {
     clientData: ClientCreateDTO
   ): Promise<MessagingHelper<ClientCreateDTO | null>> {
     try {
+      console.log("Request Payload:", clientData);
+      if (clientData.dateBirth === "") {
+        clientData.dateBirth = "1900-01-01";
+      }
       const result = await axios.post(
         `${apiBaseUrl}client/create`,
         {
@@ -95,6 +99,26 @@ export class ClientService {
       );
     }
   }
+
+  async getAllClients(): Promise<MessagingHelper<ClientDTO[]>> {
+    try {
+      const result = await axios.get(`${apiBaseUrl}client/getAll`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+
+      return result.data;
+    } catch (ex) {
+      return new MessagingHelper<null>(
+        false,
+        "Ocorreu um erro inesperado ao obter os clientes",
+        null
+      );
+    }
+  }
+
   async Enable(id: number): Promise<MessagingHelper<null>> {
     try {
       const result = await axios.post(

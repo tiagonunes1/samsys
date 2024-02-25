@@ -7,46 +7,52 @@ using SamsysDemo.Infrastructure.Models.Client;
 namespace SamsysDemo.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class ClientController : ControllerBase
+[ApiController]
+public class ClientController : ControllerBase
+{
+    private readonly ClientService _clientService;
+
+    public ClientController(ClientService clientService)
     {
-        private readonly ClientService _clientService;
-
-        public ClientController(ClientService clientService)
-        {
-            _clientService = clientService;
-        }
-
-
-        [HttpGet("{id}")]
-        public async Task<MessagingHelper<ClientDTO>> Get(long id)
-        {
-            return await _clientService.Get(id);
-        }
-
-        [HttpGet("[action]")]
-        public async Task<IEnumerable<ClientDTO>> GetAll()
-        {
-            var result = await _clientService.GetAll();
-            return result.Obj;
-        }
-
-        [HttpPut("{id}")]
-        public async Task<MessagingHelper> Update(int id, UpdateClientDTO clientToUpdateDTO)
-        {
-            return await _clientService.Update(id, clientToUpdateDTO);
-        }
-
-        [HttpPost("{id}/[action]")]
-        public async Task<MessagingHelper> Enable(long id)
-        {
-            return await _clientService.EnableClient(id);
-        }
-
-        [HttpPost("{id}/[action]")]
-        public async Task<MessagingHelper> Disable(long id)
-        {
-            return await _clientService.DisableClient(id);
-        }
+        _clientService = clientService;
     }
+
+    [HttpGet("{id}")]
+    public async Task<MessagingHelper<ClientDTO>> Get(long id)
+    {
+        return await _clientService.Get(id);
+    }
+
+    [HttpGet("[action]")]
+    public async Task<IEnumerable<ClientDTO>> GetAll()
+    {
+        var result = await _clientService.GetAll();
+        return result.Obj;
+    }
+
+    [HttpPost("create")]
+    public async Task<MessagingHelper> Create(CreateClientDTO CreateClientDTO)
+    {
+        return await _clientService.Create(CreateClientDTO);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<MessagingHelper> Update(int id, UpdateClientDTO clientToUpdateDTO)
+    {
+        return await _clientService.Update(id, clientToUpdateDTO);
+    }
+
+    [HttpPost("{id}/[action]")]
+    public async Task<MessagingHelper> Enable(long id)
+    {
+        return await _clientService.EnableClient(id);
+    }
+
+    [HttpPost("{id}/[action]")]
+    public async Task<MessagingHelper> Disable(long id)
+    {
+        return await _clientService.DisableClient(id);
+    }
+}
+
 }

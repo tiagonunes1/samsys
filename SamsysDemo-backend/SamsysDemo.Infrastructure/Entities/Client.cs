@@ -22,7 +22,7 @@ namespace SamsysDemo.Infrastructure.Entities
         public bool IsActive { get; set; }
 
         [Timestamp]
-        public byte[] ConcurrencyToken { get; private set; }
+        public byte[] ConcurrencyToken { get; set; } 
 
         public DateTime? DateBirth { get; set; }
 

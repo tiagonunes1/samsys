@@ -95,7 +95,7 @@ namespace SamsysDemo.BLL.Services
                 {
                     Name = newClient.Name,
                     PhoneNumber = newClient.PhoneNumber,
-                    DateBirth = newClient.BirthDate,
+                    DateBirth = newClient.DateBirth != DateTime.MinValue ? newClient.DateBirth : (DateTime?)null,
                     IsActive = true
                 };
 
@@ -106,7 +106,6 @@ namespace SamsysDemo.BLL.Services
                 {
                     Id = client.Id,
                     IsActive = client.IsActive,
-                    ConcurrencyToken = Convert.ToBase64String(client.ConcurrencyToken),
                     Name = client.Name,
                     PhoneNumber = client.PhoneNumber,
                     DateBirth = client.DateBirth

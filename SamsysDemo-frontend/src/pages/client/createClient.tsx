@@ -9,7 +9,7 @@ export default function CreateClient() {
     const [newClient, setNewClient] = useState<ClientCreateDTO>({
         name: "",
         phoneNumber: "",
-        birthDate: "", 
+        dateBirth: "", 
     });
 
     const [isActive, setIsActive] = useState<boolean>(true);
@@ -32,7 +32,7 @@ export default function CreateClient() {
         setNewClient({
             name: "",
             phoneNumber: "",
-            birthDate: "",  
+            dateBirth: "",  
         });
     };
 
@@ -80,8 +80,8 @@ export default function CreateClient() {
                     <Col xl={6}>
                         <input
                             type="date"
-                            value={newClient.birthDate}
-                            onChange={(e) => setNewClient({ ...newClient, birthDate: e.target.value })}
+                            value={newClient.dateBirth}
+                            onChange={(e) => setNewClient({ ...newClient, dateBirth: e.target.value })}
                         />
                     </Col>
                 </Row>
