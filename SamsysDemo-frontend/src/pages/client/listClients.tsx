@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Row, Col, Table } from "reactstrap";
 import { ClientDTO } from "../../models/client/clientDTO";
 import { MessagingHelper } from "../../models/helper/messagingHelper";
@@ -9,6 +10,7 @@ const ListClients = () => {
   const [clients, setClients] = useState<ClientDTO[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchClients();
@@ -17,23 +19,25 @@ const ListClients = () => {
   const fetchClients = async () => {
     try {
       const clientService = new ClientService();
-      const resultGetClients: MessagingHelper<ClientDTO[]> = await clientService.getAllClients();
+      const resultGetClients = await clientService.getAllClients();
 
       console.log("Resultado do backend:", resultGetClients);
-      console.log(resultGetClients.success);
-      console.log(resultGetClients.obj);
 
-      if (resultGetClients.success) {
-        setClients(resultGetClients ?? []);
-       } else {
-         setErrorMessage(resultGetClients.message);
-       }
+      if (Array.isArray(resultGetClients)) {
+        setClients(resultGetClients);
+      } else {
+        setErrorMessage(resultGetClients || "Erro ao obter os clientes.");
+      }
     } catch (error) {
       console.error("Error fetching clients:", error);
       setErrorMessage("Ocorreu um erro ao obter os clientes. Tente novamente mais tarde.");
     } finally {
       setLoading(false);
     }
+  };
+
+  const navigateToEdit = (clientId: number) => {
+    navigate(`/client/edit/${clientId}`);
   };
 
   return (
@@ -64,7 +68,7 @@ const ListClients = () => {
                 <th>Nome</th>
                 <th>Contacto</th>
                 <th>Data de Nascimento</th>
-                <th>Status</th>
+                <th>Editar</th>
               </tr>
             </thead>
             <tbody>
@@ -74,13 +78,7 @@ const ListClients = () => {
                   <td>{client.phoneNumber}</td>
                   <td>{client.DateBirth}</td>
                   <td>
-                    <ClientStatusComponent
-                      id={client.id}
-                      isActive={client.isActive}
-                      xl={12}
-                      style={{ width: "100%" }}
-                      setErrorMessage={setErrorMessage}
-                    />
+                    <button onClick={() => navigateToEdit(client.id)}>Editar</button>
                   </td>
                 </tr>
               ))}
