@@ -51,6 +51,24 @@ export class ClientService {
       );
     }
   }
+  async GetAll(): Promise<MessagingHelper<ClientDTO[] | null>> {
+    try {
+      const result = await axios.get(`${apiBaseUrl}client`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+
+      return result.data;
+    } catch (ex) {
+      return new MessagingHelper<null>(
+        false,
+        "Ocorreu um erro inesperado ao obter todos os clientes",
+        null
+      );
+    }
+  }
   async Create(
     clientData: ClientCreateDTO
   ): Promise<MessagingHelper<ClientCreateDTO | null>> {

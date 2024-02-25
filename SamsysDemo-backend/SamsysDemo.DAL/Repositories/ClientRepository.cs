@@ -2,6 +2,7 @@
 using SamsysDemo.Infrastructure.Entities;
 using SamsysDemo.Infrastructure.Helpers;
 using SamsysDemo.Infrastructure.Interfaces.Repositories;
+using SamsysDemo.Infrastructure.Models.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,22 @@ namespace SamsysDemo.DAL.Repositories
                     _context.Entry(entityToDelete).Property("ConcurrencyToken").OriginalValue = Convert.FromBase64String(concurrencyToken);
                 }
             }
+        }
+        public async Task<List<ClientDTO>> GetAll()
+        {
+            List<ClientDTO> clients = await _context.Clients
+                .Select(c => new ClientDTO
+                {
+                    Id = c.Id,
+                    IsActive = c.IsActive,
+                    ConcurrencyToken = Convert.ToBase64String(c.ConcurrencyToken),
+                    Name = c.Name,
+                    PhoneNumber = c.PhoneNumber,
+                    DateBirth = c.DateBirth
+                })
+                .ToListAsync();
+
+            return clients;
         }
 
         public async Task<bool> CheckDuplicate(string name, string phoneNumber)

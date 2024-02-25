@@ -56,6 +56,26 @@ namespace SamsysDemo.BLL.Services
             }
         }
 
+        public async Task<MessagingHelper<List<ClientDTO>>> GetAll()
+        {
+            MessagingHelper<List<ClientDTO>> response = new MessagingHelper<List<ClientDTO>>();
+
+            try
+            {
+                List<ClientDTO> clients = await _unitOfWork.ClientRepository.GetAll();
+
+                response.Obj = clients;
+                response.Success = true;
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.SetMessage("Ocorreu um erro a obter todos os clientes.");
+                return response;
+            }
+        }
+
         public async Task<MessagingHelper<ClientDTO>> Create(CreateClientDTO newClient)
         {
             MessagingHelper<ClientDTO> response = new();

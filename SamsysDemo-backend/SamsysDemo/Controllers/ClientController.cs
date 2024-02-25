@@ -24,6 +24,13 @@ namespace SamsysDemo.Controllers
             return await _clientService.Get(id);
         }
 
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<ClientDTO>> GetAll()
+        {
+            var result = await _clientService.GetAll();
+            return result.Obj;
+        }
+
         [HttpPut("{id}")]
         public async Task<MessagingHelper> Update(int id, UpdateClientDTO clientToUpdateDTO)
         {
