@@ -30,10 +30,19 @@ namespace SamsysDemo.Infrastructure.Entities
 
         public DateTime? DateRemoved { get; set; }
 
-        public void Update(string name, string phoneNumber)
+        public void Update(string name, string phoneNumber, DateTime? dateBirth)
         {
             Name = name;
             PhoneNumber = phoneNumber;
+            if (dateBirth.HasValue)
+            {
+                DateBirth = dateBirth.Value;
+            }
+            else
+            {
+                DateBirth = new DateTime(1900, 1, 1);
+            }
+
         }
 
         public void SetStatus(bool status)

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SamsysDemo.Infrastructure.Models.Client
 {
@@ -12,6 +8,8 @@ namespace SamsysDemo.Infrastructure.Models.Client
         public string Name { get; set; } = string.Empty;
         public bool IsActive { get; set; }
         public string PhoneNumber { get; set; } = string.Empty;
+        public DateTime? DateBirth { get; set; } 
+
         public string ConcurrencyToken { get; set; } = string.Empty;
     }
 }

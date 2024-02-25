@@ -75,7 +75,7 @@ namespace SamsysDemo.BLL.Services
                 {
                     Name = newClient.Name,
                     PhoneNumber = newClient.PhoneNumber,
-                    DateBirth = newClient.DateBirth,
+                    DateBirth = newClient.BirthDate,
                     IsActive = true
                 };
 
@@ -115,7 +115,7 @@ namespace SamsysDemo.BLL.Services
                     response.Success = false;
                     return response;
                 }
-                client.Update(clientToUpdate.Name, clientToUpdate.PhoneNumber);
+                client.Update(clientToUpdate.Name, clientToUpdate.PhoneNumber, clientToUpdate.DateBirth);
                 client.DateBirth = clientToUpdate.DateBirth;
 
                 _unitOfWork.ClientRepository.Update(client, clientToUpdate.ConcurrencyToken);

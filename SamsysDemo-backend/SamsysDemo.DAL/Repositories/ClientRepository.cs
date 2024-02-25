@@ -11,19 +11,19 @@ using System.Threading.Tasks;
 
 namespace SamsysDemo.DAL.Repositories
 {
-    public class ClientRepository :  IClientRepository
+    public class ClientRepository : IClientRepository
     {
         private readonly ApplicationDbContext _context;
 
-        public ClientRepository(ApplicationDbContext context) 
+        public ClientRepository(ApplicationDbContext context)
         {
             _context = context;
-        }     
+        }
 
         public async Task Delete(object id, string userDelete, string concurrencyToken)
         {
             Client? entityToDelete = await _context.Clients.FindAsync(id);
-            if(entityToDelete is not null)
+            if (entityToDelete is not null)
             {
                 entityToDelete.IsRemoved = true;
                 entityToDelete.DateRemoved = DateTime.Now;
@@ -32,8 +32,12 @@ namespace SamsysDemo.DAL.Repositories
                     _context.Entry(entityToDelete).Property("ConcurrencyToken").OriginalValue = Convert.FromBase64String(concurrencyToken);
                 }
             }
-        }    
+        }
 
+        public async Task<bool> CheckDuplicate(string name, string phoneNumber)
+        {
+            return await _context.Clients.AnyAsync(c => c.Name == name || c.PhoneNumber == phoneNumber);
+        }
         public async Task<Client?> GetById(object id, string[]? includedProperties = null)
         {
             var item = await _context.Clients.FindAsync(id);
